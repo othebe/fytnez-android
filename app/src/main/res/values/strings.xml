@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Fytnez</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="facebook_app_id">1661830894074284</string>
+
+    <string name="next">Next</string>
+    <string name="finish">Finish</string>
+
+    <!-- Onboarding -->
+    <string name="how_fit_are_you">How fit are you?</string>
+    <string name="fit">Pretty Fit!</string>
+    <string name="normal">Normal</string>
+    <string name="out_of_shape">I\'m getting into shape</string>
+
+    <string name="how_often_do_you_workout">How often do you exercise?</string>
+    <string name="once_a_week_or_less">Once a week, or less.</string>
+    <string name="a_few_days_a_week">A few days a week.</string>
+    <string name="almost_every_day">Almost every day, or more.</string>
+
+    <string name="what_are_your_fitness_goals">What are your fitness goals?</string>
+    <string name="lose_weight">Lose weight.</string>
+    <string name="gain_muscle_mass">Gain muscle mass.</string>
+    <string name="increase_strength">Increase strength.</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_profile">ProfileActivity</string>
+</resources>
