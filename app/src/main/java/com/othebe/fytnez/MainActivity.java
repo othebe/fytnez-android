@@ -7,6 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 import com.facebook.AccessToken;
 import com.facebook.FacebookSdk;
 import com.othebe.fytnez.onboarding.OnboardingActivity;
+import com.othebe.fytnez.onboarding.models.OnboardingModel;
+import com.othebe.fytnez.profile.ProfileActivity;
 
 /**
  * This class routes the application to either the login or Fytnez code.
@@ -20,9 +22,19 @@ public class MainActivity extends AppCompatActivity {
     FacebookSdk.sdkInitialize(getApplicationContext(), new FacebookSdk.InitializeCallback() {
       @Override
       public void onInitialized() {
-        // Choose starting activity.
-        self.startActivity(new Intent(self.getApplicationContext(),
-            this._requiresLogin() ? LoginActivity.class : OnboardingActivity.class));
+        // Choose starting class.
+        Class intentClass = null;
+        if (this._requiresLogin()) {
+          intentClass = LoginActivity.class;
+        }
+        else if (this._requiresOnboarding()) {
+          intentClass = OnboardingActivity.class;
+        }
+        else {
+          intentClass = ProfileActivity.class;
+        }
+
+        self.startActivity(new Intent(self.getApplicationContext(), intentClass));
       }
 
       /**
@@ -35,6 +47,13 @@ public class MainActivity extends AppCompatActivity {
         } else {
           return accessToken.isExpired();
         }
+      }
+
+      /**
+       * Determines if an onboarding is required.
+       */
+      private boolean _requiresOnboarding() {
+        return OnboardingModel.getOnboardingData() == null;
       }
     });
   }
